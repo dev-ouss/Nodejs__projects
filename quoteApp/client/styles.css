@@ -25,6 +25,7 @@ section h1 {
   color: var(--txt-clr-1);
   margin: 25px 5px;
 }
+/* buttons styles */
 .buttons {
   display: flex;
   flex-direction: column;
@@ -68,6 +69,7 @@ section h1 {
   );
   transition: all 0.5s ease;
 }
+/* circles styles */
 section .circle__1 {
   width: 150px;
   height: 150px;
