@@ -4,27 +4,40 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
   </head>
   <body>
     <section>
-      <div class="form">
-        <form action="">
+      <div class="title">
+        <h1>quote.</h1>
+        <a href="./index.html"> &leftarrow; Back to home.</a>
+      </div>
+      <div class="form__wrapper">
+        <form class="form" action="">
           <label for="author">Author:</label>
           <input type="text" name="author" id="author" />
           <label for="categories">Choose a category:</label>
           <select name="categories" id="select__category">
-            <option value="business"></option>
-            <option value="philosophy"></option>
-            <option value="psychology"></option>
-            <option value="art"></option>
-            <option value="science"></option>
+            <option value="business">Business</option>
+            <option value="philosophy">Philosophy</option>
+            <option value="psychology">Psychology</option>
+            <option value="art">Art</option>
+            <option value="science">Science</option>
           </select>
           <label for="quote">Enter your quote:</label>
-          <textarea name="quote" id="quote" cols="30" rows="10"></textarea>
+          <textarea name="quote" id="quote" cols="30" rows="5"></textarea>
           <button type="submit" id="submit">Submit</button>
         </form>
+      </div>
+      <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
       </div>
     </section>
     <script src="./form.js"></script>

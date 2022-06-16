@@ -9,22 +9,38 @@
   --txt-clr-2: rgba(255, 255, 255, 0.4);
 }
 p,
-h1 {
+h1,
+button,
+a {
   font-family: Roboto;
   font-weight: 300;
   letter-spacing: 0.5px;
+  color: var(--txt-clr-1);
 }
-
+button {
+  cursor: pointer;
+  border: none;
+}
 section {
   height: 100vh;
   background: var(--bg-clr);
   padding: 30px;
   position: relative;
+  overflow: hidden;
 }
-section h1 {
-  color: var(--txt-clr-1);
+section .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 25px 5px;
 }
+section .title a {
+  text-decoration: none;
+  color: var(--txt-clr-2);
+  font-size: 12px;
+  cursor: pointer;
+}
+
 /* buttons styles */
 .buttons {
   display: flex;
@@ -36,11 +52,10 @@ section h1 {
 }
 
 .buttons button {
-  border: none;
   background: transparent;
   width: 220px;
   padding: 20px 0;
-  font-family: Roboto;
+
   font-weight: bold;
   color: var(--txt-clr-1);
   margin: 10px 0;
@@ -155,4 +170,139 @@ section .circle__7 {
   position: absolute;
   top: 90%;
   right: 20%;
+}
+/* form styles */
+form label {
+  color: rgba(255, 255, 255);
+  font-family: Roboto;
+  margin: 10px 0;
+}
+form select option {
+  color: #151515;
+  font-family: Roboto;
+  font-weight: bold;
+}
+
+form input {
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid var(--txt-clr-2);
+  height: 35px;
+  font-size: 16px;
+  color: var(--txt-clr-1);
+  margin-bottom: 10px;
+}
+form input:focus {
+  outline: none;
+}
+form textarea {
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid var(--txt-clr-2);
+  height: 65px;
+  font-size: 16px;
+  color: var(--txt-clr-1);
+  margin-bottom: 10px;
+  resize: none;
+}
+form textarea:focus {
+  outline: none;
+}
+section .form__wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.9px);
+  -webkit-backdrop-filter: blur(3.9px);
+  position: absolute;
+  top: 42%;
+  transform: translateY(-42%);
+  width: 85%;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid var(--txt-clr-2);
+  height: 35px;
+  font-size: 16px;
+  color: var(--txt-clr-2);
+  margin: 10px 0;
+}
+.form select:focus {
+  outline: none;
+}
+.form select option {
+  background-color: var(--bg-clr);
+  color: var(--txt-clr-2);
+  font-size: 12px;
+}
+.form #submit {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #263341, #015871);
+  width: 85%;
+  height: 50px;
+  font-weight: bold;
+  margin: 20px auto 0 auto;
+  color: var(--txt-clr-1);
+  letter-spacing: 1.5px;
+}
+
+/* waves animation  */
+
+.ocean {
+  height: 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg)
+    repeat-x;
+  position: absolute;
+  top: -190px;
+  width: 6400px;
+  height: 200px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
 }
