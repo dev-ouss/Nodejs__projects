@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
   // data verification
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
-
+  //creating + saving quote to database
   const quote = new Quote({
     body: req.body.body,
     author: req.body.author,
@@ -41,4 +41,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-exports = router;
+module.exports = router;

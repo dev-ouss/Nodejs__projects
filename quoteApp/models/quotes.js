@@ -2,11 +2,11 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 
 const quoteSchema = new mongoose.Schema({
-  body: { type: String, minlength: 5, maxlength: 500, required: true },
+  body: { type: String, minlength: 5, maxlength: 3000, required: true },
   author: { type: String, minlength: 5, maxlength: 255, required: true },
   category: {
     type: String,
-    minlength: 5,
+    minlength: 3,
     maxlength: 255,
     enum: [
       "business",

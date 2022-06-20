@@ -4,36 +4,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
     <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
   </head>
   <body>
     <section>
-      <select name="categories" id="">
-        <option value="business"></option>
-        <option value="philosophy"></option>
-        <option value="psychology"></option>
-        <option value="art"></option>
-        <option value="science"></option>
-      </select>
-      <div class="slider">
-        <div class="slide">
-          <p>l'an prochain je serais roi l'important c'est d'y croire.</p>
-          <span class="author">Laylow</span>
-        </div>
-        <div class="slide">
-          <p>l'an prochain je serais roi l'important c'est d'y croire.</p>
-          <span class="author">Laylow</span>
-        </div>
-        <div class="slide">
-          <p>l'an prochain je serais roi l'important c'est d'y croire.</p>
-          <span class="author">Laylow</span>
+      <div class="title">
+        <h1>quote.</h1>
+        <a href="./index.html">&leftarrow; Back to home.</a>
+      </div>
+      <form action="" class="form form__2">
+        <select name="categories" id="select__category">
+          <option value="business">Business</option>
+          <option value="philosophy">Philosophy</option>
+          <option value="psychology">Psychology</option>
+          <option value="art">Art</option>
+          <option value="science">Science</option>
+        </select>
+        <button class="form__2__submit" type="submit">Load</button>
+      </form>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <p>L'an prochain je serais roi, l'important c'est d'y croire.</p>
+            <span>Laylow</span>
+          </div>
+          <div class="swiper-slide">
+            <p>L'an prochain je serais roi, l'important c'est d'y croire.</p>
+            <span>Laylow</span>
+          </div>
+          <div class="swiper-slide">
+            <p>L'an prochain je serais roi, l'important c'est d'y croire.</p>
+            <span>Laylow</span>
+          </div>
         </div>
       </div>
-      <div class="btn__container">
-        <button id="prev">Prev</button>
-        <button id="next">Next</button>
-      </div>
+      <div class="circle__1"></div>
+      <div class="circle__2"></div>
+      <div class="circle__3"></div>
+      <div class="circle__4"></div>
+      <div class="circle__5"></div>
+      <div class="circle__6"></div>
+      <div class="circle__7"></div>
+      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+      <script src="./display.js"></script>
     </section>
   </body>
 </html>

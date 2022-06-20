@@ -39,6 +39,7 @@ section .title a {
   color: var(--txt-clr-2);
   font-size: 12px;
   cursor: pointer;
+  margin-top: 4px;
 }
 
 /* buttons styles */
@@ -46,16 +47,15 @@ section .title a {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 55%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -55%);
+  transform: translate(-50%, -50%);
 }
 
 .buttons button {
   background: transparent;
   width: 220px;
   padding: 20px 0;
-
   font-weight: bold;
   color: var(--txt-clr-1);
   margin: 10px 0;
@@ -182,7 +182,6 @@ form select option {
   font-family: Roboto;
   font-weight: bold;
 }
-
 form input {
   border: none;
   background: transparent;
@@ -220,7 +219,6 @@ section .form__wrapper {
   width: 85%;
   margin: 0 auto;
 }
-
 .form {
   display: flex;
   flex-direction: column;
@@ -228,7 +226,6 @@ section .form__wrapper {
   margin: 0 auto;
   padding: 30px 0;
 }
-
 .form select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -249,7 +246,7 @@ section .form__wrapper {
   color: var(--txt-clr-2);
   font-size: 12px;
 }
-.form #submit {
+.form .submit {
   border-radius: 8px;
   background: linear-gradient(90deg, #263341, #015871);
   width: 85%;
@@ -305,4 +302,53 @@ section .form__wrapper {
   50% {
     transform: translate3d(0, 5px, 0);
   }
+}
+/* form 2 styles */
+section .form__2 {
+  width: 60%;
+  margin: 20px auto;
+  align-items: center;
+}
+section .form__2 select {
+  text-align: center;
+}
+
+section .form__2 .form__2__submit {
+  margin: 5px 10px;
+  height: 40px;
+  width: 60%;
+  font-weight: bold;
+  border: 2px solid var(--txt-clr-2);
+  background: transparent;
+}
+/* swiper styles */
+.swiper {
+  width: 80%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.swiper-slide p {
+  color: var(--txt-clr-1);
+  font-size: 28px;
+  max-width: 80%;
+  text-align: justify;
+}
+.swiper-slide span {
+  font-family: Montserrat;
+  color: var(--txt-clr-2);
+  font-size: 14px;
+  position: absolute;
+  top: 90%;
+  left: 60%;
+}
+.swiper .swiper-wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+.swiper-wrapper .swiper-slide {
+  position: relative;
+  height: auto;
+  padding: 45px 0;
 }
