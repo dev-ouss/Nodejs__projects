@@ -2,6 +2,7 @@ const author = document.getElementById("author");
 const category = document.getElementById("select__category");
 const quote = document.getElementById("quote");
 const form = document.querySelector(".form");
+
 // event listener
 
 form.addEventListener("submit", postData);
@@ -21,4 +22,13 @@ async function postData(e) {
     },
     body: JSON.stringify(data),
   });
+  e.target.reset();
+  const formWrapper = form.parentElement;
+  const submitTxt = document.createElement("p");
+  submitTxt.textContent = "Quote submitted!";
+  submitTxt.style.color = "green";
+  submitTxt.style.position = "absolute";
+  submitTxt.style.top = "105%";
+  submitTxt.style.left = "30%";
+  formWrapper.appendChild(submitTxt);
 }

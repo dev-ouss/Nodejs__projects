@@ -331,7 +331,7 @@ section .form__2 .form__2__submit {
 }
 .swiper-slide p {
   color: var(--txt-clr-1);
-  font-size: 28px;
+  font-size: 24px;
   max-width: 80%;
   text-align: justify;
 }
