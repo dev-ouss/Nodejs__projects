@@ -2,12 +2,11 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const { User, validateUser } = require("../models/user");
 const validation = require("../middleware/validation");
-const auth = require("../middleware/auth");
+const { User, validateUser } = require("../models/user");
 
 router.get("/", async (req, res) => {
-  const users = await User.find({});
+  const users = await User.find({}).select("-password");
 
   return res.status(200).send(users);
 });
@@ -15,7 +14,7 @@ router.get("/", async (req, res) => {
 router.get("/:email", async (req, res) => {
   const user = await User.findOne({
     email: req.params.email,
-  });
+  }).select("-password");
 
   return res.status(200).send(user);
 });
