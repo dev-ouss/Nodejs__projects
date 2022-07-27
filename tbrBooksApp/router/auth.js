@@ -2,10 +2,14 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const validation = require("../middleware/validation");
-const { User, validateUser } = require("../models/user");
+const { User } = require("../models/user");
+const Joi = require("joi");
 const bcrypt = require("bcrypt");
 
-router.post("/", validation(validateUser), async (req, res) => {
+router.post("/", async (req, res) => {
+  //data verification
+  const { error } = validateUser(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
   // checking the email
   const user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(404).send("Invalid email or password.");
@@ -25,4 +29,11 @@ router.post("/", validation(validateUser), async (req, res) => {
   });
 });
 
+function validateUser(user) {
+  const schema = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().required(),
+  });
+  return schema.validate(user);
+}
 module.exports = router;
