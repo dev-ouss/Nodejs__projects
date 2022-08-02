@@ -10,6 +10,9 @@ body {
 p {
   font-family: montserrat;
 }
+i {
+  pointer-events: none;
+}
 .wrapper {
   height: 100vh;
   background: url("./images/app-bg-1-01.png");
@@ -38,7 +41,7 @@ p {
   border-radius: 18px;
   border: 1px solid rgb(71, 70, 70);
 }
-.wrapper .signup__wrapper {
+.wrapper .signup {
   width: 200px;
   margin: 15px 0;
   text-align: center;
@@ -103,7 +106,7 @@ p {
   width: 180px;
   border-radius: 6px;
   border: 1px solid rgb(71, 70, 70);
-  margin: 0 15px;
+  margin-right: 15px;
 }
 .form__wrapper form .btn {
   font-family: roboto;
@@ -114,6 +117,10 @@ p {
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  margin-right: 15px;
+}
+.form__wrapper form .delete__book {
+  background: rgb(172, 49, 49);
 }
 .form__wrapper form select {
   width: 180px;
@@ -121,6 +128,7 @@ p {
   border-radius: 6px;
   border: 1px solid rgb(71, 70, 70);
   cursor: pointer;
+  margin-right: 15px;
 }
 
 .form__wrapper form select:focus {
@@ -173,6 +181,11 @@ p {
   border: none;
   transition: all 0.1s linear;
 }
+.list .buttons .delete__list {
+  cursor: pointer;
+  border: none;
+  margin-left: 15px;
+}
 .lists__wrapper .list__btn:hover {
   transform: rotate(90deg);
 }
@@ -189,4 +202,34 @@ p {
 }
 .show__list .plus__icon {
   display: none;
+}
+
+/* logout link styles  */
+.section__one {
+  position: relative;
+}
+.logout__wrapper {
+  display: flex;
+  gap: 15px;
+
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 100;
+}
+.logout__wrapper p {
+  color: #fff;
+  text-transform: capitalize;
+  font-family: roboto;
+}
+.logout__wrapper i {
+  margin-right: 5px;
+}
+.logout__wrapper .logout {
+  color: #fff;
+  transition: all 0.3s linear;
+}
+
+.logout:hover {
+  letter-spacing: 1.5px;
 }

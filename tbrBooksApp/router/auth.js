@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
   if (!user) return res.status(404).send("Invalid email or password.");
   // checking the password
-  const isValid = bcrypt.compare(req.body.password, user.password);
+  const isValid = await bcrypt.compare(req.body.password, user.password);
   if (!isValid) return res.status(404).send("Invalid email or password.");
   //generate the jwt
   const token = user.generateAuthToken();

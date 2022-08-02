@@ -23,7 +23,7 @@ router.post("/", validation(validateUser), async (req, res) => {
   let user = await User.findOne({
     email: req.body.email,
   });
-  if (user) return res.status(400).send("User already registered.");
+  if (user) return res.status(409).send("User already registered.");
 
   user = new User({
     name: req.body.name,
@@ -36,6 +36,7 @@ router.post("/", validation(validateUser), async (req, res) => {
 
   await user.save();
   res.header("x-auth-token", token).send({
+    token: token,
     name: user.name,
     email: user.email,
   });

@@ -12,11 +12,11 @@ router.get("/", auth, async (req, res) => {
 });
 
 router.get("/:userId", auth, async (req, res) => {
-  const list = await List.find({
+  const lists = await List.find({
     user: req.params.userId,
   }).select("-user");
 
-  return res.send(list);
+  return res.send(lists);
 });
 
 router.post("/", [auth, validation(validateList)], async (req, res) => {
@@ -41,5 +41,10 @@ router.put("/:id", [auth, validation(validateList)], async (req, res) => {
   );
   res.send(response);
 });
-
+router.delete("/:id", auth, async (req, res) => {
+  const response = await List.deleteOne({
+    _id: req.params.id,
+  });
+  res.send(response);
+});
 module.exports = router;

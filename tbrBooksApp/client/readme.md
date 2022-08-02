@@ -14,8 +14,5 @@
             </div>
           </div>
           <ul class="books">
-            <li></li>
-            <li></li>
-            <li></li>
           </ul>
         </div> -->
